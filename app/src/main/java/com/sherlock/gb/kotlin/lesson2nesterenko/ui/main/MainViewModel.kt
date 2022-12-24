@@ -19,8 +19,8 @@ class MainViewModel (
         Thread{
             liveData.postValue(AppState.Loading)
             sleep(2000L)
-            var i = (0..100).random()
-            if(i>1) {
+            var i = (0..20).random()
+            if(i>7) {
                 //liveData.postValue(AppState.Success(Weather()))
                 liveData.postValue(AppState.Success(Any()))
             }else{

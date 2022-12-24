@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import com.sherlock.gb.kotlin.lesson2nesterenko.R
 import com.sherlock.gb.kotlin.lesson2nesterenko.databinding.FragmentMainBinding
 import com.sherlock.gb.kotlin.lesson2nesterenko.viewmodel.AppState
@@ -58,6 +59,7 @@ class MainFragment : Fragment() {
             is AppState.Error -> {
                 binding.loadingLayout.visibility = View.GONE
                 binding.message.text = "Не получилось ${data.error}"
+                Snackbar.make(binding.mainView,"Не получилось ${data.error}",Snackbar.LENGTH_LONG).show()
             }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
@@ -65,7 +67,7 @@ class MainFragment : Fragment() {
             is AppState.Success -> {
                 binding.loadingLayout.visibility = View.GONE
                 binding.message.text = "Получилось!"
-                Toast.makeText(requireContext(),"WORK",Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.mainView,"Получилось",Snackbar.LENGTH_LONG).show()
             }
         }
     }
