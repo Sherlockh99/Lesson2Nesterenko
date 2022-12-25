@@ -6,4 +6,4 @@ data class Weather(
     val feelsLike: Int = 0
 )
 
-fun getDefaultCity() = City("London", 55.755826, 37.617299900000035)
+

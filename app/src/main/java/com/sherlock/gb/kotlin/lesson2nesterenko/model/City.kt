@@ -5,3 +5,5 @@ data class City(
     val lat: Double,
     val lon: Double
 )
+
+fun getDefaultCity() = City("London", 55.755826, 37.617299900000035)
